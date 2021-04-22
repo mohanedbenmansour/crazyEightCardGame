@@ -4,7 +4,10 @@ public class LogicCarte extends Carte{
    public LogicCarte(int couleur, int hauteur) {
       super(couleur, hauteur);
    }
-    
+    /**
+    * Retourne "vrai" si la règle des huit fous correspond à "ça".
+    * Sinon `false`.
+   */
 
    public boolean matches(LogicCarte t){
       if (getCouleur() == t.getCouleur()) {
@@ -19,7 +22,9 @@ public class LogicCarte extends Carte{
       return false;
    }
 
-
+/**
+    * Retourne le score de la carte
+   */
    public int score(){
       int rank = getHauteur();
       if (rank == 8) {

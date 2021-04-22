@@ -8,11 +8,15 @@ public class LogicJoueur extends Joueur{
       mainCarte = new CollectionCartesLogic(nom);
    }
    
-
+/**
+    * Obtient la main du joueur.
+    */
    public CollectionCartesLogic getHand(){
       return mainCarte;
    }
-
+/**
+    * Calcule le score du joueur (points de pénalité).
+    */
    public int score() {
       int sum = 0;
       for (int i = 0; i < getHand().size(); i++) {
@@ -21,16 +25,22 @@ public class LogicJoueur extends Joueur{
       return sum;
    }
 
-
+ /**
+    * Affiche la main du joueur.
+    */
    public void display() {
       getHand().display();
    }
 
-
+/**
+    * Affiche le nom du joueur et son score.
+    */
    public void displayScore() {
       System.out.println(getNom() + " a " + score() + " points");
    }
-
+   /**
+    * Retirer et retourner une carte légale de la main du joueur.
+    */
    public LogicCarte play(Partie partie, LogicCarte prev) {
       LogicCarte carte = searchForMatch(prev);
       if (carte == null) {
@@ -38,7 +48,9 @@ public class LogicJoueur extends Joueur{
       }
       return carte;
    }
-
+/**
+    * Cherche une carte correspondante dans la main du joueur.
+    */
    
    public LogicCarte searchForMatch(LogicCarte prev) {
       for (int i = 0; i < getHand().size(); i++) {
@@ -50,7 +62,9 @@ public class LogicJoueur extends Joueur{
       return null;
    }
 
- 
+  /**
+    * Tire des cartes jusqu'à ce qu'une correspondance soit trouvée.
+    */
    public LogicCarte drawForMatch(Partie partie, LogicCarte prev) {
       while (true) {
          LogicCarte card = partie.draw();

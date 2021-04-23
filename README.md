@@ -1,1 +1,1 @@
-a sumulation for the crazy eight game using java
+a simulation for the crazy eight game using java

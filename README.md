@@ -1,1 +1,1 @@
-JavaApplication3
+a sumulation for the crazy eight game using java
